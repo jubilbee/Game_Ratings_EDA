@@ -1,0 +1,1 @@
+<h1 align='center'><b> Game Ratings </b></h1>
