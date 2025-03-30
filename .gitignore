@@ -1,11 +1,13 @@
-# Data files
+# Ignore data files
 data/
 api_ref.txt
+
+# Ignore .csv files
 .csv
 
-# Virtual environments
+# Ignore virtual environments
 .env
 venv/
 
-# Byte-compiled files
+# Ignore byte-compiled files
 __pycache__/
