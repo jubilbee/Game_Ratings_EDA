@@ -1,6 +1,7 @@
 # Data files
 data/
 api_ref.txt
+.csv
 
 # Virtual environments
 .env
