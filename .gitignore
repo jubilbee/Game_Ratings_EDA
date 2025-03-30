@@ -1,0 +1,10 @@
+# Data files
+data/
+api_ref.txt
+
+# Virtual environments
+.env
+venv/
+
+# Byte-compiled files
+__pycache__/

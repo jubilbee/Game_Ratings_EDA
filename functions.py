@@ -4,6 +4,7 @@ import requests
 from requests import post
 import os
 import time
+from dotenv import load_dotenv
 
 def load_or_fetch_data(csv_file_path: str, api_url: str, data: str) -> pd.DataFrame:
     """
@@ -24,9 +25,14 @@ def load_or_fetch_data(csv_file_path: str, api_url: str, data: str) -> pd.DataFr
     else:
         print(f"CSV file '{csv_file_path}' not found. Fetching data from API.")
         
-        # Set Client ID and access token
-        client_id = '785ilpg2b1u4z4jyvw10cysnnyojpi'
-        access_token = 'ntxl8cihla4pl5fdinfiorq1yd9eki'
+        # Load environment variables from the .env file
+
+        load_dotenv()
+
+        # Access sensitive API information
+        client_id = os.getenv('CLIENT_ID')
+        access_token = os.getenv('ACCESS_TOKEN')
+        token_type = os.getenv('TOKEN_TYPE')
 
         results = []
         limit = 500 # Max limit for IGDB's API
@@ -38,7 +44,7 @@ def load_or_fetch_data(csv_file_path: str, api_url: str, data: str) -> pd.DataFr
                 f'{api_url}',
                 headers={
                     'Client-ID': client_id,
-                    'Authorization': f'Bearer {access_token}'
+                    'Authorization': f'{token_type} {access_token}'
                 },
                 data=f'{data} limit {limit}; offset {offset};'
             )
