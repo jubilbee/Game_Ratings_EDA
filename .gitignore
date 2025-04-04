@@ -1,7 +1,7 @@
 # Ignore data files
 data/
 api_ref.txt
-
+igdb.db
 # Ignore .csv files
 .csv
 
